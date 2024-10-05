@@ -1,0 +1,208 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eaeaea;
+    width: 100%;
+    position: relative;
+}
+
+/* Logo */
+.logo img {
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Active/Focused Link */
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #ff5500;
+}
+
+/* Underline Effect on Active Links */
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff5500;
+    bottom: 0;
+    left: 0;
+}
+
+/* Right-side Links */
+.right-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Call to Action Button */
+.cta-button {
+    background-color: #ff5500;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff3300;
+}
+
+/* Login/Register Link */
+.login-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: #333;
+}
+
+/* Image Container */
+.image-container {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%; 
+    height: auto;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Prevent scrolling when menu is open */
+body.menu-open {
+    overflow: hidden; /* Prevent the main content from scrolling */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hide navigation links initially on mobile */
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: fixed; 
+        left: 0;
+        top: 0; /* Ensure menu starts from the top */
+        height: 100vh; /* Full screen height */
+        width: 100vw; 
+        background-color: #0000ff;  
+        padding-top: 50px; 
+        z-index: 999;
+        color: white;
+        font-size: 18px;
+        overflow-y: auto; /* Allow scrolling if there are too many items */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .nav-links li {
+        margin: 20px 0; /* Equal spacing between items */
+    }
+
+    .nav-links li:last-child {
+        margin-bottom: 50px; /* Extra space for the last item */
+    }
+
+    .nav-links li a {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        width: 100%; /* Full width for each link */
+    }
+
+    /* Hamburger menu icon */
+    .menu-icon {
+        cursor: pointer;
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 20px;
+        z-index: 1000;
+    }
+
+    .menu-icon div {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+    }
+
+    /* Hide right-links on mobile */
+    .right-links {
+        display: none;
+    }
+
+    /* Image Centering on Mobile */
+    .image-container {
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .image-container img {
+        width: auto;
+        height: 100vh;
+        object-fit: cover; 
+        object-position: center;
+    }
+}
